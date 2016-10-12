@@ -5,12 +5,11 @@
 [React]: https://facebook.github.io/react/
 [Express]: https://expressjs.com/
 [Mocha]: https://mochajs.org/
-[Commits]: https://github.com/hmc-godaddy-clinic-16/stack-demo/commits/master
+[Commits]: https://github.com/hmc-godaddy-clinic-16/announcement-section/commits/master
 
-# Stack demo
+# Announcement Section
 
-This repo contains code for the demo that Dan gave during our
-September 23, 2016 site visit.
+Stand-alone announcement section to be integrated with the announcement editor.
 
 ## How to get and run this code
 

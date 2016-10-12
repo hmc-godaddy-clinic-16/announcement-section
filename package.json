@@ -1,7 +1,7 @@
 {
-  "name": "stack-demo",
+  "name": "announcement-section",
   "version": "1.0.0",
-  "description": "From the site visit",
+  "description": "announcement section without the editor",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d",
