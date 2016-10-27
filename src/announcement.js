@@ -6,10 +6,10 @@ class Announcement extends React.Component {
 		var image = this.props.data.image;
 
 		var announcementStyle = {
-			'border-style': 'solid',
-			'background-image': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + image + ')',		
-			'background-repeat': 'no-repeat',
-			'background-size': 'cover'
+			'borderStyle': 'solid',
+			'backgroundImage': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + image + ')',		
+			'backgroundRepeat': 'no-repeat',
+			'backgroundSize': 'cover'
 		};
 
 		return <div style={announcementStyle}>
