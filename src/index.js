@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as constants from './constants';
 import Announcement from "./announcement.js";
 
-// announcement can be displayed in both edit and published mode
-const Mode = {
-	EDIT: 'EDIT',
-	PUBLISH: 'PUBLISH'
-};
-var mode = Mode.EDIT;
+// mock mode
+var mode = constants.EDIT;
 
 // mock data
 var announcementData = {
@@ -18,23 +15,4 @@ var announcementData = {
 	endDate: "2016-11-05T10:00:00.000Z"
 };
 
-// scheduling data
-var start = new Date(announcementData.startDate)
-var end = new Date(announcementData.endDate)
-var current = new Date();
-
-// show announcement depending on scheduled date and mode
-if (start < current && current < end || 
-	mode == Mode.EDIT) {
-	var announcement = <Announcement data={announcementData}/>;
-} else {
-	var announcement = <noscript/>;
-}
-
-ReactDOM.render(announcement, document.getElementById("announcement"));
-
-// testing
-console.log("Start: " + start);
-console.log("End: " + end);
-console.log("Current: " + current);
-console.log("\n");
+ReactDOM.render(<Announcement data={announcementData} mode={mode}/>, document.getElementById("announcement"));
