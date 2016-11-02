@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import * as constants from './constants';
+import * as constants from './constants.js';
 import Announcement from "./announcement.js";
 
 // mock mode

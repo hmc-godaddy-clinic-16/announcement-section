@@ -1,6 +1,6 @@
 import React from "react";
 import Content from "./content.js";
-import * as constants from './constants';
+import * as constants from './constants.js';
 
 class Announcement extends React.Component {
 	render () {
@@ -17,10 +17,21 @@ class Announcement extends React.Component {
 		var start = new Date(this.props.data.startDate);
 		var end = new Date(this.props.data.endDate);
 		var current = new Date();
+		var displayAnnouncement = false;
+
+		// display announcement on edit mode, when no dates specified,
+		// and when the current date falls within the scheduled date
+		if ( this.props.mode == constants.EDIT || 
+			(start < current && current < end) || 
+			(start == constants.INVALID_DATE && end == constants.INVALID_DATE) ||
+			(start == constants.INVALID_DATE && end != constants.INVALID_DATE && current < end) ||
+			(start != constants.INVALID_DATE && end == constants.INVALID_DATE && start < current) ) {
+			displayAnnouncement = true;
+		} 
 
 		// show announcement depending on scheduled date and mode
-		if (start < current && current < end || 
-			this.props.mode == constants.EDIT) {
+		// and when no start and no end is given
+		if (displayAnnouncement) {
 			var announcement = (
 				<div style={announcementStyle}>
 					<Content data={this.props.data} />
@@ -34,6 +45,7 @@ class Announcement extends React.Component {
 		console.log("Start: " + start);
 		console.log("End: " + end);
 		console.log("Current: " + current);
+		console.log("Display: " + displayAnnouncement);
 		console.log("\n");
 
 		return announcement;
