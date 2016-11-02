@@ -4,7 +4,7 @@ class Content extends React.Component {
 	render () {
 		var contentStyle = {
 			'color': 'white',
-			'text-align': 'center'
+			'textAlign': 'center'
 		};
 
 		return (
